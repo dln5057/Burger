@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var cat = require('../models/burger.js');
+var burger = require('../models/burger.js');
 
 router.get('/', function(req, res){
   res.redirect('/burgers');
 });
 
 router.get('/burgers', function(req, res){
-  buger.selectAll(function (data){
+  burger.selectAll(function (data){
     var burgerObject = {bugers: data};
     console.log(burgerObject);
     res.render('index', burgerObject);
