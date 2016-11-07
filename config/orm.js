@@ -11,7 +11,7 @@ var orm = {
     });
   }
 
-  insertOne: function(table, name, ate, cb){
+  insertOne: function(table, name, cb){
     var queryString = 'INSERT INTO burgers (burger_name, devoured, date) VALUES ("' + cols + '", false;';
     connection.query(queryString, vals, function (err, result) {
       if (err) throw err;
