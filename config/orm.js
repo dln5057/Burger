@@ -2,28 +2,30 @@ var connection = require("./connection.js")
 
 //ORM example from class
 var orm = {
-  selectAll: function(list){
-    queryString = 'Select * FROM' + list ;
-    connection.query(queryString, function(err, data){
+  selectAll: function(table, cb){
+    var queryString = 'SELECT * FROM ' + table + ';';
+    console.log(queryString);
+    connection.query(queryString, function (err, result) {
       if (err) throw err;
-      console.log(data);
-    })
+      cb(result);
+    });
   }
 
-  insertOne: function(list, name, ate){
-    queryString = 'INSERT INTO' + list + (name, ate) + 'VAlUES (?, ?)'
-    connection.query(queryString, [req.bod.burger_name, req.body.devoured], function(err, data){
+  insertOne: function(table, name, ate, cb){
+    var queryString = 'INSERT INTO burgers (burger_name, devoured, date) VALUES ("' + cols + '", false, CURDATE());';
+    connection.query(queryString, vals, function (err, result) {
       if (err) throw err;
-      console.log(data);
-    })
+      cb(result);
+    });
   }
 
-  updateOne: function(list, name, ate, id){
-    queryString = 'UPDATE' + list + 'SET' + name + '= ? ,' + ate + '= ? WHERE' + id + '= ?'
-    connection.query(queryString, [req.body.name, req.body.ate, req.body.id], function(err, data){
-      if(err) throw err;
-      console.log(data);
-    })
+  updateOne: function(list, name, ate, id, cb){
+    var queryString = 'UPDATE burgers SET devoured=true WHERE id =' + id + ';';
+    // console.log(queryString);
+    connection.query(queryString, function (err, result) {
+      if (err) throw err;
+      cb(result);
+    });
   }
 }
 

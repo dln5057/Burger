@@ -1,7 +1,19 @@
-var orm = require('./config/orm.js');
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static(process.cwd() + '/public'));
 
-orm.selectAll('burgers')
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));
+var exphbs = require('express-handlebars');
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main'
+}));
+app.set('view engine', 'handlebars');
 
-orm.insertOne('burgers', 'burger_name', 'devoured')
+var routes = require('./controllers/burgers_controller.js');
+app.use('/', routes);
 
-orm.updateOne('burgers', )
+var port = 3000;
+app.listen(port);
