@@ -12,7 +12,7 @@ var orm = {
   }
 
   insertOne: function(table, name, ate, cb){
-    var queryString = 'INSERT INTO burgers (burger_name, devoured, date) VALUES ("' + cols + '", false, CURDATE());';
+    var queryString = 'INSERT INTO burgers (burger_name, devoured, date) VALUES ("' + cols + '", false;';
     connection.query(queryString, vals, function (err, result) {
       if (err) throw err;
       cb(result);
