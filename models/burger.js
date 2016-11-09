@@ -2,25 +2,28 @@ var orm = require('../config/orm.js');
 
 //CODE to call ORM functions
 
+console.log("burger is loaded")
+
 var burger = {
+
   selectAll: function(cb){
     orm.selectAll('burgers', function (res){
       cb(res);
-    })
-  }
+    });
+  },
   
 
-  insertOne: function(cb){
-    orm.insertOne('burgers', function(res){
+  insertOne: function(cols, vals, cb){
+    orm.insertOne('burgers', cols, vals, function(res){
       cb(res);
-    })
-  }
+    });
+  },
 
-  updateOne: function(cb){
-    orm.updateOne('burgers', function(res){
+  updateOne: function(selected, cb){
+    orm.updateOne('burgers', selected, function(res){
       cb(res);
-    })
-  } 
-}
+    });
+  }
+};
 
 module.exports = burger;
