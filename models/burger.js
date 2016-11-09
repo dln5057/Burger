@@ -20,7 +20,7 @@ var burger = {
   },
 
   updateOne: function(selected, cb){
-    orm.updateOne('burgers', selected, function(res){
+    orm.updateOne(selected, function(res){
       cb(res);
     });
   }
