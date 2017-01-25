@@ -66,3 +66,7 @@ h1 {
 img {
     height: 236px;
 }
+
+.col-xs-4 {
+    width: 76.333333%;
+}
