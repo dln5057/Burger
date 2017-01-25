@@ -1,12 +1,19 @@
 var mysql = require('mysql');
 
-//for password, put in your password for MySql
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'burgers_db'
-});
+var connection;
+
+// For Heroku Deployment else Local MySQL Database
+if(process.env.JAWSDB_URL){
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+}
+else{
+  connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'root',
+    password : '', // Add your password
+    database : 'burgers_db' // Add your database
+  });
+}
 
 
 connection.connect(function(err) {
