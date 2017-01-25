@@ -10,18 +10,9 @@ else{
   connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '', // Add your password
+    password : 'password', // Add your password
     database : 'burgers_db' // Add your database
   });
 }
-
-
-connection.connect(function(err) {
-    if (err) {
-        console.error('error connecting: ' + err.stack);
-        return;
-    }
-    console.log('connected as id ' + connection.threadId);
-});
 
 module.exports = connection;
