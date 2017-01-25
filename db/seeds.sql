@@ -1,6 +1,3 @@
-INSERT INTO burgers (burger_name, devoured) VALUES ('Onion Burger', false);
-INSERT INTO burgers (burger_name, devoured) VALUES ('Pizza Burger', false);
-INSERT INTO burgers (burger_name, devoured) VALUES ('BBQ Bacon Burger', false);
-
-use burgerDB;
-
+INSERT INTO burgers (burger_name, devoured) VALUES ('Breakfast Burger', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Big Mac', FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Veggie Burger', FALSE);

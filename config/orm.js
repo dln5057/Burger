@@ -1,40 +1,72 @@
-var connection = require("./connection.js")
+/*
+Here is the O.R.M. where you write functions using inputs and condistions to turn them into database commands like SQL.
+*/
+var connection = require('./connection.js');
 
-console.log("orm is ok")
+function printQuestionMarks(num){
+  var arr = [];
 
-//ORM example from class
-var orm = {
-
-  selectAll: function(table, cb){
-    var queryString = 'SELECT * FROM ' + table + ';';
-    console.log(queryString);
-    connection.query(queryString, function (err, result) {
-      if (err) throw err;
-      cb(result);
-    });
-  },
-
-  insertOne: function(table, cols, vals, cb){
-    console.log(table)
-    console.log(cols)
-    console.log(vals)
-    var queryString = 'INSERT INTO burgers (' + cols + ') VALUES ("' + vals[0]  +'",' +vals[1] + ');';
-    console.log(queryString);
-    connection.query(queryString, function (err, result) {
-      if (err) throw err;
-      cb(result);
-    });
-  },
-
-  updateOne: function(id, cb){
-    console.log(id)
-    var queryString = 'UPDATE burgers SET devoured='+true+' WHERE id =' + id + ';';
-    console.log(queryString);
-    connection.query(queryString, function (err, result) {
-      if (err) throw err;
-      cb(result);
-    });
+  for (var i=0; i<num; i++){
+    arr.push('?')
   }
+
+  return arr.toString();
 }
+
+function objToSql(ob){
+
+  var arr = [];
+
+  for (var key in ob) {
+    arr.push(key + '=' + ob[key]);
+  }
+
+  return arr.toString();
+}
+
+var orm = {
+    all: function(tableInput, cb) {
+        var queryString = 'SELECT * FROM ' + tableInput + ';';
+        connection.query(queryString, function(err, result) {
+            if (err) throw err;
+            cb(result);
+        });
+    },
+    // Vals is an array of values saved to cols
+    // Cols are columns with values
+    create: function(table, cols, vals, cb) {
+      var queryString = 'INSERT INTO ' + table;
+
+      queryString = queryString + ' (';
+      queryString = queryString + cols.toString();
+      queryString = queryString + ') ';
+      queryString = queryString + 'VALUES (';
+      queryString = queryString + printQuestionMarks(vals.length);
+      queryString = queryString + ') ';
+
+      console.log(queryString)
+
+      connection.query(queryString, vals, function(err, result) {
+        if (err) throw err;
+        cb(result);
+      });
+    },
+   
+    // objColVals are certian columns and values picked to update
+    update: function(table, objColVals, condition, cb) {
+      var queryString = 'UPDATE ' + table;
+
+      queryString = queryString + ' SET ';
+      queryString = queryString + objToSql(objColVals);
+      queryString = queryString + ' WHERE ';
+      queryString = queryString + condition;
+
+      console.log(queryString)
+      connection.query(queryString, function(err, result) {
+        if (err) throw err;
+        cb(result);
+      });
+    }
+};
 
 module.exports = orm;

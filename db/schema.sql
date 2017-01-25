@@ -1,26 +1,13 @@
-CREATE DATABASE burgers_db;
+CREATE DATABASE  burgers_db;
 USE burgers_db;
 
-CREATE TABLE burgers
-(
-id INT NOT NULL AUTO_INCREMENT,
-burger_name VARCHAR(30) NOT NULL,
-devoured BOOLEAN NOT NULL,
-date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
-date TIMESTAMP NOT NULL,
-PRIMARY KEY (id)
-);
 
+DROP TABLE IF EXISTS burgers;
 
-create database burgerDB;
-
-use burgerDB;
-
-create table burgers
-(
-id INT NOT NULL AUTO_INCREMENT,
-burger_name VARCHAR(30) NOT NULL,
-devoured BOOLEAN NOT NULL,
-date TIMESTAMP NOT NULL, 
+#burgers table
+CREATE TABLE burgers (
+id int NOT NULL AUTO_INCREMENT,
+burger_name varchar(255) NOT NULL,
+devoured BOOL DEFAULT false,
 PRIMARY KEY (id)
 );
