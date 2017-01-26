@@ -2,11 +2,20 @@
   "name": "node_what_todo",
   "version": "1.0.0",
   "description": "-Node \r -Express \r -MySQL \r -Handlebars \r -Jquery",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+
+  "engines":{
+    "node": "4.1.1"
+  },
+  "repsoitory":{
+    "type": "git",
+    "url": "git+https://github.com/dln5057/Burger"
+  },
+
+  "author": "dln5057",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
