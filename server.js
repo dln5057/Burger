@@ -4,7 +4,8 @@ var methodOverride = require('method-override')
 
 var app = express();
 //Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(__dirname + '/public'));
+// app.use(express.static(__dirname + '/public'));
+app.use(express.static(process.cwd() + '/public'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
@@ -24,7 +25,7 @@ app.use('/', routes);
 app.use('/update', routes);
 app.use('/create', routes);
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
   console.log('App listening on PORT ' + PORT);
 });
