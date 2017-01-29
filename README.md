@@ -12,14 +12,14 @@ Link to the Burger App: https://eattheburgers.herokuapp.com/burgers
 
 ##Screen Shots of the app
 
-###
+### Here is the Index page of the Burger App. It list all the burgers that were created and stored in the MySQL database.
 ![Burgers](public/assets/images/ScreenShots/index.JPG)
 
-###
+###Clicking on the "Devour it!" button, will move the burger under the Devoured list. 
 ![BigMac](public/assets/images/ScreenShots/BigMacDevoured.JPG)
 
-###
+### Simply type which burger you would like to create and click "create"
 ![South](public/assets/images/ScreenShots/SouthwestBurger1.JPG)
 
-###
+### After creating the burger of your choice, the burger is now displayed and stored in the database.
 ![SouthWest](public/assets/images/ScreenShots/SouthwestBurger2.JPG)
