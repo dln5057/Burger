@@ -4,12 +4,14 @@
 
 Link to the Burger App: https://eattheburgers.herokuapp.com/burgers
 
+***
+
 ## How the app functions:
 *
 
 
 
-
+***
 ##Screen Shots of the app
 
 ### Here is the Index page of the Burger App. It list all the burgers that were created and stored in the MySQL database.
