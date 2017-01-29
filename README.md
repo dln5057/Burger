@@ -16,10 +16,10 @@ Link to the Burger App: https://eattheburgers.herokuapp.com/burgers
 ![Burgers](public/assets/images/ScreenShots/index.JPG)
 
 ###
-![Burgers](public/assets/images/ScreenShot/BigMacDevoured.JPG)
+![Burgers1](public/assets/images/ScreenShot/BigMacDevoured.JPG)
 
 ###
-![Burgers](public/assets/images/ScreenShot/SouthwestBurger1.JPG)
+![Burgers2](public/assets/images/ScreenShot/SouthwestBurger1.JPG)
 
 ###
-![Burgers](public/assets/images/ScreenShot/SouthwestBurger2.JPG)
+![Burgers3](public/assets/images/ScreenShot/SouthwestBurger2.JPG)
