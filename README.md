@@ -23,3 +23,13 @@ Link to the Burger App: https://eattheburgers.herokuapp.com/burgers
 
 ### After creating the burger of your choice, the burger is now displayed and stored in the database.
 ![SouthWest](public/assets/images/ScreenShots/SouthwestBurger2.JPG)
+
+## Technologies Built with...
+- Node.js
+- Handlebars - http://handlebarsjs.com/
+- MySQL
+- Express NPM Package - https://www.npmjs.com/package/express
+- mysql NPM Package - https://www.npmjs.com/package/mysql
+- body-parser NPM Package - https://www.npmjs.com/package/inquirer
+- express-handlbars NPM Package - https://www.npmjs.com/package/express-handlebars
+- handlebars NPM Package - https://www.npmjs.com/package/handlebars
