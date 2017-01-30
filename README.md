@@ -9,9 +9,9 @@ Link to the Burger App: https://eattheburgers.herokuapp.com/burgers
 ## How the app functions:
   App Uses some CRUD functionality to `CREATE`, `READ`, and `UPDATE` From a created ORM. 
 
-    1. READ function reads all the burgers from MySQL database and displays them with Handlebars.
-    2.UPDATE function takes the Burger and Devours it which will hit a Express route `burgers/update` that changes the burger to devoured and re-routes the index page to show the updated list.
-    3. CREATE function creates a new burger from the create form. After clicking the "create" button, the Express route `/burgers/create` is hit and the newly created burger is inserted into the MySQL database and displyed with Handlebars. 
+  1. READ function reads all the burgers from MySQL database and displays them with Handlebars.
+  2.UPDATE function takes the Burger and Devours it which will hit a Express route `burgers/update` that changes the burger to devoured and re-routes the index page to show the updated list.
+  3. CREATE function creates a new burger from the create form. After clicking the "create" button, the Express route `/burgers/create` is hit and the newly created burger is inserted into the MySQL database and displyed with Handlebars. 
 
 
 
